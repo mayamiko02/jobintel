@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "market_id": "COUNTRY_ISO2",
+  "market_name": "Country Name",
+  "country_code": "XX",
+  "timezone": "Africa/Example",
+  "currency": "XXX",
+  "default_cutoff_hour_local": "17:00",
+  "priority_regions": [
+    {
+      "tier": 1,
+      "name": "Primary Commercial Hub / Capital",
+      "cities_and_aliases": [
+        "Capital City",
+        "Metro Area"
+      ]
+    },
+    {
+      "tier": 2,
+      "name": "Secondary Industrial / Regional Hubs",
+      "cities_and_aliases": [
+        "City A",
+        "City B"
+      ]
+    }
+  ],
+  "portals": [
+    {
+      "name": "Primary Local Job Board",
+      "domain": "example-jobs.org",
+      "category": "local_board",
+      "reliability_tier": "high",
+      "notes": "Add verification notes for this portal."
+    }
+  ],
+  "statutory_and_verification_bodies": [
+    {
+      "acronym": "NQA",
+      "full_name": "National Qualifications Authority",
+      "scope": "Academic qualification verification",
+      "keywords": [
+        "qualification verification",
+        "NQA"
+      ]
+    }
+  ],
+  "common_eligibility_patterns": [
+    "Specify common statutory license, work permit, ID, or formatting patterns for this market"
+  ],
+  "scam_red_flags": [
+    "Advance fees or unverified personal email domains impersonating public/corporate employers"
+  ],
+  "provenance": {
+    "status": "provisional",
+    "last_reviewed": null,
+    "review_note": "Describe what was verified, when and how. Tag portals and bodies as observed, reported or provisional."
+  }
+}

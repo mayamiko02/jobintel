@@ -1,0 +1,281 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jobintel.dev/schemas/market_pack.schema.json",
+  "title": "JOBINTEL MarketPack",
+  "description": "Modular country or regional labor-market configuration consumed by Search Strategy, Discovery, Matching, and Tracker engines.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "market_id",
+    "market_name",
+    "country_code",
+    "timezone",
+    "currency",
+    "priority_regions",
+    "portals",
+    "statutory_and_verification_bodies",
+    "common_eligibility_patterns",
+    "scam_red_flags"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "market_id": {
+      "type": "string"
+    },
+    "market_name": {
+      "type": "string"
+    },
+    "country_code": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "default_cutoff_hour_local": {
+      "type": "string"
+    },
+    "priority_regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "tier",
+          "name",
+          "cities_and_aliases"
+        ],
+        "properties": {
+          "tier": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "name": {
+            "type": "string"
+          },
+          "cities_and_aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "portals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "domain",
+          "category",
+          "reliability_tier"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "local_board",
+              "global_aggregator",
+              "ngo_multilateral",
+              "public_sector",
+              "corporate_ats",
+              "remote_board"
+            ]
+          },
+          "reliability_tier": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "verify_carefully"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "string",
+            "enum": [
+              "observed",
+              "reported",
+              "provisional"
+            ],
+            "description": "observed = seen directly in a live session on observed_on; reported = stated by a prior author or session and not re-checked; provisional = general knowledge that must be verified against the current official source before relying on it. Missing means provisional."
+          },
+          "observed_on": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "access_note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "statutory_and_verification_bodies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "acronym",
+          "full_name",
+          "scope"
+        ],
+        "properties": {
+          "acronym": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "provenance": {
+            "type": "string",
+            "enum": [
+              "observed",
+              "reported",
+              "provisional"
+            ],
+            "description": "observed = seen directly in a live session on observed_on; reported = stated by a prior author or session and not re-checked; provisional = general knowledge that must be verified against the current official source before relying on it. Missing means provisional."
+          },
+          "verify_at": {
+            "type": "string",
+            "description": "What to check against, e.g. the body's official site."
+          }
+        }
+      }
+    },
+    "common_eligibility_patterns": {
+      "type": "array",
+      "description": "Plain strings (provisional) or objects carrying provenance.",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "required": [
+              "pattern"
+            ],
+            "properties": {
+              "pattern": {
+                "type": "string"
+              },
+              "provenance": {
+                "type": "string",
+                "enum": [
+                  "observed",
+                  "reported",
+                  "provisional"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "scam_red_flags": {
+      "type": "array",
+      "description": "Plain strings (provisional) or objects carrying provenance.",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "required": [
+              "flag"
+            ],
+            "properties": {
+              "flag": {
+                "type": "string"
+              },
+              "provenance": {
+                "type": "string",
+                "enum": [
+                  "observed",
+                  "reported",
+                  "provisional"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "status",
+        "review_note"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "partially_verified",
+            "provisional"
+          ],
+          "description": "Overall status of the pack."
+        },
+        "last_reviewed": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "review_note": {
+          "type": "string"
+        }
+      }
+    },
+    "title_vocabulary": {
+      "type": "object",
+      "properties": {
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "observed",
+            "reported",
+            "provisional"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "default_cutoff_provenance": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "reported",
+        "provisional"
+      ]
+    }
+  }
+}

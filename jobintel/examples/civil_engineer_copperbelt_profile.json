@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "fixture-zm-civil-002",
+  "profile_status": "confirmed",
+  "input_mode": "manual_form",
+  "confirmed_at": "2026-11-20T10:15:00Z",
+  "identity": {
+    "full_name": "Chomba Mwansa",
+    "email": "chomba.mwansa.example@invalid.test",
+    "phone": "+260 960 000 222",
+    "portfolio_or_linkedin": [],
+    "location": {
+      "country_code": "ZM",
+      "country_name": "Zambia",
+      "region_or_province": "Copperbelt Province",
+      "city": "Kitwe"
+    },
+    "national_id_available": true,
+    "verified_age_bracket": null,
+    "work_authorization": ["ZM"]
+  },
+  "professional_positioning": {
+    "headline": "Civil Engineering Technician & Site Supervision Officer",
+    "summary_bullets": [
+      "2 years of civil construction supervision, trenching & water-reticulation inspection, and AutoCAD drafting on the Copperbelt.",
+      "Experienced with daily site progress logs, materials take-offs, and contractor safety briefings."
+    ],
+    "primary_domains": ["Civil Engineering & Construction", "Water Infrastructure & Site Operations"]
+  },
+  "seniority": {
+    "estimated_years_relevant": 2.0,
+    "recommended_levels": ["entry_junior", "assistant_associate", "officer_specialist"],
+    "excluded_levels": ["executive_director", "manager", "senior_lead"],
+    "evidence_rationale": "2 years technician & assistant site engineer experience aligns with Junior Engineer, Engineering Technician, Clerk of Works, and Site Assistant roles."
+  },
+  "work_experience": [
+    {
+      "role_title": "Assistant Site Civil Technician",
+      "employer": "Nkana Infrastructure Builders (Fictional Contractor)",
+      "location": "Kitwe, Copperbelt",
+      "start_date": "2024-11",
+      "end_date": "Present",
+      "employment_type": "contract",
+      "responsibilities": [
+        "Supervised stormwater drainage, concrete curing checks, and municipal water pipe trench alignments.",
+        "Prepared daily site diaries, cement/aggregate consumption logs, and AutoCAD as-built markups."
+      ],
+      "verified_outcomes": [],
+      "evidence_source": "candidate_confirmed"
+    }
+  ],
+  "education_and_credentials": {
+    "highest_completed_level": "diploma",
+    "qualifications": [
+      {
+        "title": "Diploma in Civil Engineering",
+        "level": "diploma",
+        "institution": "Northern Technical College (Fictional)",
+        "year": "2024",
+        "status": "completed",
+        "accreditation_number": null,
+        "evidence_source": "certificate"
+      }
+    ],
+    "professional_registrations": [
+      {
+        "body_name": "EIZ",
+        "registration_number": null,
+        "status": "in_progress",
+        "evidence_source": "candidate_confirmed"
+      }
+    ],
+    "credential_verification_status": {
+      "authority": "ZAQA",
+      "status": "in_progress",
+      "notes": "ZAQA verification submitted and awaiting final stamp."
+    }
+  },
+  "skills": {
+    "explicit_skills": [
+      { "name": "Site Supervision & Concrete Inspection", "cluster": "Civil Construction", "evidence_source": "candidate_confirmed", "evidence_snippet": "Supervised stormwater drainage, concrete curing checks" },
+      { "name": "Water Reticulation & Pipe Alignment", "cluster": "Water & Sanitation Infrastructure", "evidence_source": "candidate_confirmed", "evidence_snippet": "municipal water pipe trench alignments" },
+      { "name": "Materials Take-Off & Site Logs", "cluster": "Civil Construction", "evidence_source": "candidate_confirmed", "evidence_snippet": "cement/aggregate consumption logs" }
+    ],
+    "tools_and_systems": [
+      { "name": "AutoCAD", "proficiency": "Intermediate", "evidence_source": "candidate_confirmed" },
+      { "name": "Microsoft Excel", "proficiency": "Intermediate", "evidence_source": "candidate_confirmed" }
+    ],
+    "inferred_transferable_skills": [
+      { "skill": "Construction Project Support & Procurement Tracking", "inferred_from": "Daily materials take-off and site contractor diaries", "confidence": "high" }
+    ],
+    "languages": [
+      { "language": "English", "proficiency": "Fluent" },
+      { "language": "Bemba", "proficiency": "Native" }
+    ]
+  },
+  "adjacent_career_paths": [
+    {
+      "track_name": "Clerk of Works / Construction Inspector",
+      "why_plausible": "Direct site quality logging and drainage/pipe inspection experience.",
+      "required_bridge_or_gap": "Active EIZ Technician practicing certificate needed where statutory."
+    },
+    {
+      "track_name": "Water Utility Operations Technician",
+      "why_plausible": "Hands-on pipe alignment and trenching supervision translates directly to water utilities.",
+      "required_bridge_or_gap": "Utility-specific meter/network maintenance training."
+    }
+  ],
+  "preferences": {
+    "target_markets": ["ZM"],
+    "priority_locations": ["Kitwe", "Ndola", "Chingola", "Lusaka"],
+    "relocation_openness": "domestic_open",
+    "remote_preference": "onsite_only",
+    "employment_types": ["permanent", "fixed_term", "contract"],
+    "excluded_shift_or_industries": [],
+    "expected_salary": { "currency": "ZMW", "min_monthly": null, "notes": null },
+    "availability": "Immediate"
+  },
+  "ambiguities_to_confirm": [
+    {
+      "field": "education_and_credentials.professional_registrations[0]",
+      "question": "Confirm current Engineering Institution of Zambia (EIZ) membership and practicing certificate status.",
+      "why_it_matters": "EIZ practicing registration is mandatory by Zambian law for engineering roles.",
+      "resolved": true,
+      "candidate_answer": "EIZ Technician application and ZAQA verification both in progress."
+    }
+  ]
+}

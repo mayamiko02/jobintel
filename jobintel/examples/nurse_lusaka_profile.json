@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "fixture-zm-nurse-001",
+  "profile_status": "confirmed",
+  "input_mode": "cv_parsed",
+  "confirmed_at": "2026-11-20T09:30:00Z",
+  "identity": {
+    "full_name": "Thandiwe Banda",
+    "email": "thandiwe.banda.example@invalid.test",
+    "phone": "+260 970 000 111",
+    "portfolio_or_linkedin": [],
+    "location": {
+      "country_code": "ZM",
+      "country_name": "Zambia",
+      "region_or_province": "Lusaka Province",
+      "city": "Lusaka"
+    },
+    "national_id_available": true,
+    "verified_age_bracket": null,
+    "work_authorization": ["ZM"]
+  },
+  "professional_positioning": {
+    "headline": "Registered Nurse & Community Health Coordinator",
+    "summary_bullets": [
+      "4 years of clinical nursing, ART/MCH service delivery, and patient triage in Lusaka district clinics.",
+      "Coordinated community immunization outreach logs and monthly DHIS2 health data submissions."
+    ],
+    "primary_domains": ["Clinical Nursing & Patient Care", "Public Health & NGO Programme Support"]
+  },
+  "seniority": {
+    "estimated_years_relevant": 4.0,
+    "recommended_levels": ["officer_specialist", "mid_level", "assistant_associate"],
+    "excluded_levels": ["executive_director", "manager"],
+    "evidence_rationale": "4 years hands-on post-registration nursing and clinic reporting experience; suitable for Officer, Coordinator, and Mid-level NGO Health roles."
+  },
+  "work_experience": [
+    {
+      "role_title": "Registered Nurse",
+      "employer": "Chilenje Urban Health Centre (Fictional Clinic)",
+      "location": "Lusaka, Zambia",
+      "start_date": "2023-02",
+      "end_date": "Present",
+      "employment_type": "full_time",
+      "responsibilities": [
+        "Managed antenatal care (ANC), outpatient triage, and HIV/ART adherence counselling.",
+        "Compiled weekly clinic immunization tallies and submitted monthly DHIS2 service indicators."
+      ],
+      "verified_outcomes": ["Maintained zero cold-chain stockout alerts across quarterly vaccine audits (2024-2025)."],
+      "evidence_source": "cv"
+    },
+    {
+      "role_title": "Clinical Nursing Intern / Assistant",
+      "employer": "Kafue Mission Hospital (Fictional Facility)",
+      "location": "Kafue, Lusaka Province",
+      "start_date": "2022-01",
+      "end_date": "2023-01",
+      "employment_type": "full_time",
+      "responsibilities": [
+        "Assisted maternal ward admissions, patient vitals monitoring, and medical consumables stock tracking."
+      ],
+      "verified_outcomes": [],
+      "evidence_source": "cv"
+    }
+  ],
+  "education_and_credentials": {
+    "highest_completed_level": "diploma",
+    "qualifications": [
+      {
+        "title": "Diploma in Registered Nursing",
+        "level": "diploma",
+        "institution": "Lusaka School of Nursing (Fictional College)",
+        "year": "2021",
+        "status": "completed",
+        "accreditation_number": null,
+        "evidence_source": "certificate"
+      }
+    ],
+    "professional_registrations": [
+      {
+        "body_name": "NMCZ",
+        "registration_number": "NMCZ-DEMO-2026",
+        "status": "active",
+        "evidence_source": "certificate"
+      }
+    ],
+    "credential_verification_status": {
+      "authority": "ZAQA",
+      "status": "verified",
+      "notes": "Domestic nursing diploma registered with NMCZ and verified."
+    }
+  },
+  "skills": {
+    "explicit_skills": [
+      { "name": "Outpatient Triage & Clinical Care", "cluster": "Clinical Nursing", "evidence_source": "cv", "evidence_snippet": "Managed antenatal care (ANC), outpatient triage" },
+      { "name": "HIV/ART Adherence Counselling", "cluster": "Public Health", "evidence_source": "cv", "evidence_snippet": "HIV/ART adherence counselling" },
+      { "name": "Maternal & Child Health (MCH)", "cluster": "Clinical Nursing", "evidence_source": "cv", "evidence_snippet": "antenatal care (ANC)" },
+      { "name": "Health Data Reporting", "cluster": "Public Health", "evidence_source": "cv", "evidence_snippet": "submitted monthly DHIS2 service indicators" }
+    ],
+    "tools_and_systems": [
+      { "name": "DHIS2", "proficiency": "Practical", "evidence_source": "cv" },
+      { "name": "SmartCare", "proficiency": "Practical", "evidence_source": "cv" },
+      { "name": "Microsoft Excel", "proficiency": "Working knowledge", "evidence_source": "cv" }
+    ],
+    "inferred_transferable_skills": [
+      { "skill": "NGO Health Programme Monitoring & Data Quality", "inferred_from": "Monthly DHIS2 clinic reporting and immunization audit logs", "confidence": "high" },
+      { "skill": "Medical Supply Chain & Cold-Chain Compliance", "inferred_from": "Consumables tracking and vaccine audit record-keeping", "confidence": "high" }
+    ],
+    "languages": [
+      { "language": "English", "proficiency": "Fluent" },
+      { "language": "Bemba", "proficiency": "Fluent" },
+      { "language": "Nyanja", "proficiency": "Conversational" }
+    ]
+  },
+  "adjacent_career_paths": [
+    {
+      "track_name": "Community Health / NGO Project Officer",
+      "why_plausible": "Direct ANC/ART outreach and DHIS2 reporting match donor-funded clinic coordination.",
+      "required_bridge_or_gap": "Formal M&E software tools (e.g., PowerBI/KoboToolbox) if required by NGO."
+    },
+    {
+      "track_name": "Clinical Research Nurse / Study Coordinator",
+      "why_plausible": "Accurate patient consent, vitals documentation, and regulatory adherence.",
+      "required_bridge_or_gap": "Good Clinical Practice (GCP) certificate often requested."
+    }
+  ],
+  "preferences": {
+    "target_markets": ["ZM"],
+    "priority_locations": ["Lusaka", "Kafue", "Chilanga"],
+    "relocation_openness": "domestic_open",
+    "remote_preference": "onsite_only",
+    "employment_types": ["permanent", "fixed_term", "contract"],
+    "excluded_shift_or_industries": [],
+    "expected_salary": { "currency": "ZMW", "min_monthly": null, "notes": "Negotiable within clinic/NGO bands" },
+    "availability": "1 month notice"
+  },
+  "ambiguities_to_confirm": [
+    {
+      "field": "preferences.relocation_openness",
+      "question": "Are you willing to relocate outside Lusaka Province for NGO health programmes?",
+      "why_it_matters": "Many USAID/NGO public health posts are stationed in Copperbelt, Eastern, or Southern provinces.",
+      "resolved": true,
+      "candidate_answer": "Open to domestic relocation across Zambia."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jobintel.dev/schemas/match_result.schema.json",
+  "title": "JOBINTEL MatchEvaluation",
+  "description": "Transparent, strictly non-fabricated match evaluation comparing a VerifiedVacancy against a confirmed CandidateProfile.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "vacancy_id",
+    "candidate_profile_ref",
+    "fit_tier",
+    "recommendation",
+    "verified_requirements_met",
+    "inferred_transferable_skills",
+    "missing_qualifications_and_blockers",
+    "match_summary"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "vacancy_id": { "type": "string" },
+    "candidate_profile_ref": { "type": "string" },
+    "fit_tier": {
+      "type": "string",
+      "enum": ["Strong Fit", "Possible Fit", "Stretch", "Excluded"]
+    },
+    "recommendation": {
+      "type": "string",
+      "enum": ["Apply Immediately", "Apply With Tailored Framing", "Hold / Confirm Eligibility First", "Skip / Excluded"]
+    },
+    "verified_requirements_met": {
+      "type": "array",
+      "description": "Requirements directly satisfied by verified CV or certificate evidence.",
+      "items": {
+        "type": "object",
+        "required": ["requirement", "candidate_evidence", "evidence_source"],
+        "properties": {
+          "requirement": { "type": "string" },
+          "candidate_evidence": { "type": "string" },
+          "evidence_source": { "type": "string", "enum": ["cv", "certificate", "candidate_confirmed"] }
+        }
+      }
+    },
+    "inferred_transferable_skills": {
+      "type": "array",
+      "description": "Adjacent/transferable evidence bridging a partial gap — explicitly labeled as inferred, never verified direct experience.",
+      "items": {
+        "type": "object",
+        "required": ["requirement", "transferable_bridge", "confidence"],
+        "properties": {
+          "requirement": { "type": "string" },
+          "transferable_bridge": { "type": "string" },
+          "confidence": { "type": "string", "enum": ["high", "medium", "low"] }
+        }
+      }
+    },
+    "missing_qualifications_and_blockers": {
+      "type": "array",
+      "description": "Any unmet mandatory requirement, missing statutory registration, unverified age/demographic condition, or geo restriction.",
+      "items": {
+        "type": "object",
+        "required": ["gap", "severity", "mitigation_or_action"],
+        "properties": {
+          "gap": { "type": "string" },
+          "severity": { "type": "string", "enum": ["hard_blocker", "unverified_eligibility_check", "manageable_gap", "minor_desirable"] },
+          "mitigation_or_action": { "type": "string" }
+        }
+      }
+    },
+    "match_summary": { "type": "string" }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0.0",
+  "market_id": "NG",
+  "market_name": "Nigeria",
+  "country_code": "NG",
+  "timezone": "Africa/Lagos",
+  "currency": "NGN",
+  "default_cutoff_hour_local": "17:00",
+  "priority_regions": [
+    {
+      "tier": 1,
+      "name": "Lagos & FCT Abuja",
+      "cities_and_aliases": [
+        "Lagos",
+        "Ikeja",
+        "Victoria Island",
+        "Lekki",
+        "Abuja",
+        "FCT"
+      ]
+    },
+    {
+      "tier": 2,
+      "name": "Port Harcourt, Kano & Ibadan",
+      "cities_and_aliases": [
+        "Port Harcourt",
+        "Rivers",
+        "Kano",
+        "Ibadan",
+        "Enugu"
+      ]
+    }
+  ],
+  "portals": [
+    {
+      "name": "Jobberman Nigeria",
+      "domain": "jobberman.com",
+      "category": "local_board",
+      "reliability_tier": "high",
+      "notes": "Leading Nigerian corporate and tech job board."
+    },
+    {
+      "name": "MyJobMag Nigeria",
+      "domain": "myjobmag.com",
+      "category": "local_board",
+      "reliability_tier": "medium",
+      "notes": "Verify employer domain directly."
+    },
+    {
+      "name": "LinkedIn Nigeria",
+      "domain": "linkedin.com",
+      "category": "global_aggregator",
+      "reliability_tier": "high",
+      "notes": "Fintech, telecoms, oil & gas, and NGO openings."
+    }
+  ],
+  "statutory_and_verification_bodies": [
+    {
+      "acronym": "NYSC",
+      "full_name": "National Youth Service Corps",
+      "scope": "Discharge or exemption certificate required for most graduate roles",
+      "keywords": [
+        "NYSC",
+        "discharge certificate",
+        "exemption"
+      ]
+    },
+    {
+      "acronym": "COREN",
+      "full_name": "Council for the Regulation of Engineering in Nigeria",
+      "scope": "Registered engineers",
+      "keywords": [
+        "COREN",
+        "NSE"
+      ]
+    },
+    {
+      "acronym": "ICAN",
+      "full_name": "Institute of Chartered Accountants of Nigeria",
+      "scope": "Chartered accountants",
+      "keywords": [
+        "ICAN",
+        "ANAN"
+      ]
+    },
+    {
+      "acronym": "MDCN",
+      "full_name": "Medical and Dental Council of Nigeria",
+      "scope": "Medical practitioners (plus NMCN for nurses)",
+      "keywords": [
+        "MDCN",
+        "NMCN"
+      ]
+    }
+  ],
+  "common_eligibility_patterns": [
+    "NYSC discharge or exemption certificate mandatory for graduate entry/officer positions",
+    "Degree classification threshold (e.g., Second Class Upper / Lower) on graduate trainee schemes",
+    "Age cutoffs strictly enforced on some banking graduate programmes"
+  ],
+  "scam_red_flags": [
+    "Pay-to-interview SMS invitations to residential or unmarked hotel venues",
+    "Upfront registration, aptitude test, or documentation fees"
+  ],
+  "provenance": {
+    "status": "provisional",
+    "last_reviewed": null,
+    "review_note": "Compiled from general knowledge. Portal domains, regulator names and eligibility patterns have not been verified in a live session. Verify each against the current official source before relying on it, and record what you verified here."
+  }
+}

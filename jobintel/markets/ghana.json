@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "market_id": "GH",
+  "market_name": "Ghana",
+  "country_code": "GH",
+  "timezone": "Africa/Accra",
+  "currency": "GHS",
+  "default_cutoff_hour_local": "17:00",
+  "priority_regions": [
+    {
+      "tier": 1,
+      "name": "Greater Accra",
+      "cities_and_aliases": [
+        "Accra",
+        "Tema",
+        "Airport City",
+        "East Legon",
+        "Greater Accra"
+      ]
+    },
+    {
+      "tier": 2,
+      "name": "Ashanti, Western & Northern",
+      "cities_and_aliases": [
+        "Kumasi",
+        "Takoradi",
+        "Sekondi",
+        "Tarkwa",
+        "Tamale"
+      ]
+    }
+  ],
+  "portals": [
+    {
+      "name": "Jobberman Ghana",
+      "domain": "jobberman.com.gh",
+      "category": "local_board",
+      "reliability_tier": "high",
+      "notes": "Primary Ghana formal job board."
+    },
+    {
+      "name": "JobsInGhana",
+      "domain": "jobsinghana.com",
+      "category": "local_board",
+      "reliability_tier": "medium",
+      "notes": "Cross-check employer address and email domain."
+    },
+    {
+      "name": "LinkedIn Ghana",
+      "domain": "linkedin.com",
+      "category": "global_aggregator",
+      "reliability_tier": "high",
+      "notes": "Mining, NGO, telecoms, and corporate roles."
+    }
+  ],
+  "statutory_and_verification_bodies": [
+    {
+      "acronym": "NSS",
+      "full_name": "National Service Scheme",
+      "scope": "Completed National Service certificate required for post-graduate entry",
+      "keywords": [
+        "National Service",
+        "NSS certificate"
+      ]
+    },
+    {
+      "acronym": "GTEC",
+      "full_name": "Ghana Tertiary Education Commission",
+      "scope": "Tertiary accreditation and certificate evaluation",
+      "keywords": [
+        "GTEC",
+        "NAB"
+      ]
+    },
+    {
+      "acronym": "GhIE",
+      "full_name": "Ghana Institution of Engineering",
+      "scope": "Engineering registration",
+      "keywords": [
+        "GhIE"
+      ]
+    },
+    {
+      "acronym": "ICAG",
+      "full_name": "Institute of Chartered Accountants, Ghana",
+      "scope": "Accounting practice",
+      "keywords": [
+        "ICAG"
+      ]
+    }
+  ],
+  "common_eligibility_patterns": [
+    "Completed National Service (NSS) requirement",
+    "Active GhIE, NMC, or ICAG registration for regulated roles"
+  ],
+  "scam_red_flags": [
+    "Advance-fee requests or mobile-money payments for processing",
+    "Unverified Gmail recruiters impersonating Ghana mining companies or embassies"
+  ],
+  "provenance": {
+    "status": "provisional",
+    "last_reviewed": null,
+    "review_note": "Compiled from general knowledge. Portal domains, regulator names and eligibility patterns have not been verified in a live session. Verify each against the current official source before relying on it, and record what you verified here."
+  }
+}

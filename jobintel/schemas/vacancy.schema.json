@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jobintel.dev/schemas/vacancy.schema.json",
+  "title": "JOBINTEL VerifiedVacancy",
+  "description": "Normalized, verification-checked vacancy record produced by Engine 3.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "vacancy_id",
+    "dedupe_key",
+    "company",
+    "job_title",
+    "category",
+    "location",
+    "employment_type",
+    "experience_level",
+    "application_link_or_email",
+    "source",
+    "verification_status",
+    "is_currently_open",
+    "requirements",
+    "eligibility_and_submission_rules",
+    "availability_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "vacancy_id": {
+      "type": "string"
+    },
+    "dedupe_key": {
+      "type": "string"
+    },
+    "vacancy_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "company": {
+      "type": "string"
+    },
+    "job_title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "location": {
+      "type": "object",
+      "required": [
+        "city_or_duty_station",
+        "country",
+        "work_mode"
+      ],
+      "properties": {
+        "city_or_duty_station": {
+          "type": "string"
+        },
+        "province_or_region": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": "string"
+        },
+        "work_mode": {
+          "type": "string",
+          "enum": [
+            "onsite",
+            "hybrid",
+            "remote",
+            "field_based",
+            "unknown"
+          ]
+        },
+        "remote_geo_policy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "employment_type": {
+      "type": "string"
+    },
+    "experience_level": {
+      "type": "string"
+    },
+    "application_link_or_email": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "date_posted": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "deadline": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "deadline_iso": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "verified_full_ad",
+        "partially_verified_snippet",
+        "excluded_expired",
+        "excluded_scam_or_unverified",
+        "excluded_ineligible"
+      ]
+    },
+    "is_currently_open": {
+      "type": "boolean",
+      "description": "Derived: true only when availability_status is verified_open or likely_open."
+    },
+    "verification_notes": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "object",
+      "required": [
+        "mandatory",
+        "preferred"
+      ],
+      "properties": {
+        "mandatory": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "preferred": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "eligibility_and_submission_rules": {
+      "type": "object",
+      "properties": {
+        "statutory_or_accreditation_required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "demographic_or_age_clause": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "requires_combined_single_pdf": {
+          "type": "boolean"
+        },
+        "requires_national_id_copy": {
+          "type": "boolean"
+        },
+        "requires_salary_expectation": {
+          "type": "boolean"
+        },
+        "exact_subject_line": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shift_or_timezone_requirement": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "availability_status": {
+      "type": "string",
+      "enum": [
+        "verified_open",
+        "likely_open",
+        "uncertain",
+        "expired",
+        "removed"
+      ],
+      "description": "Evidence-based availability on checked_at. See engines/03_vacancy_discovery.md for the exact criteria."
+    },
+    "availability_evidence": {
+      "type": "object",
+      "description": "What the availability call was based on. Required in practice for every state; checked_at is mandatory because availability decays.",
+      "required": [
+        "checked_at",
+        "basis"
+      ],
+      "properties": {
+        "checked_at": {
+          "type": "string",
+          "description": "ISO date or datetime of the check, in the market timezone."
+        },
+        "basis": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "full_page_fetched",
+              "employer_ats_page",
+              "aggregator_copy_only",
+              "snippet_only",
+              "deadline_in_future",
+              "deadline_passed",
+              "no_deadline_stated",
+              "posted_within_recency_window",
+              "posted_outside_recency_window",
+              "posting_date_missing",
+              "closed_banner",
+              "http_404_or_410",
+              "listing_removed_message",
+              "apply_link_works",
+              "apply_link_dead",
+              "fetch_failed",
+              "conflicting_dates"
+            ]
+          }
+        },
+        "recency_days": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Days between date_posted and checked_at, if known."
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "is_official_source": {
+      "type": "boolean",
+      "description": "True when the record comes from the employer's own site or ATS."
+    }
+  }
+}

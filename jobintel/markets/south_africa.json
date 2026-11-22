@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "market_id": "ZA",
+  "market_name": "South Africa",
+  "country_code": "ZA",
+  "timezone": "Africa/Johannesburg",
+  "currency": "ZAR",
+  "default_cutoff_hour_local": "17:00",
+  "priority_regions": [
+    {
+      "tier": 1,
+      "name": "Gauteng",
+      "cities_and_aliases": [
+        "Johannesburg",
+        "Sandton",
+        "Midrand",
+        "Pretoria",
+        "Tshwane",
+        "Centurion"
+      ]
+    },
+    {
+      "tier": 2,
+      "name": "Western Cape & KwaZulu-Natal",
+      "cities_and_aliases": [
+        "Cape Town",
+        "Stellenbosch",
+        "Durban",
+        "Umhlanga"
+      ]
+    }
+  ],
+  "portals": [
+    {
+      "name": "Careers24",
+      "domain": "careers24.com",
+      "category": "local_board",
+      "reliability_tier": "high",
+      "notes": "Major SA corporate & SME board."
+    },
+    {
+      "name": "PNet",
+      "domain": "pnet.co.za",
+      "category": "local_board",
+      "reliability_tier": "high",
+      "notes": "Enterprise ATS & agency postings."
+    },
+    {
+      "name": "OfferZen",
+      "domain": "offerzen.com",
+      "category": "local_board",
+      "reliability_tier": "high",
+      "notes": "Software engineering, product, and data roles."
+    },
+    {
+      "name": "DPSA Public Service Circulars",
+      "domain": "dpsa.gov.za",
+      "category": "public_sector",
+      "reliability_tier": "high",
+      "notes": "Requires Z83 form where specified."
+    }
+  ],
+  "statutory_and_verification_bodies": [
+    {
+      "acronym": "SAQA",
+      "full_name": "South African Qualifications Authority",
+      "scope": "NQF level verification and foreign credential evaluation",
+      "keywords": [
+        "SAQA",
+        "NQF"
+      ]
+    },
+    {
+      "acronym": "ECSA",
+      "full_name": "Engineering Council of South Africa",
+      "scope": "Pr.Eng / Pr.Tech Eng registration",
+      "keywords": [
+        "ECSA",
+        "Pr Eng"
+      ]
+    },
+    {
+      "acronym": "SAICA",
+      "full_name": "South African Institute of Chartered Accountants",
+      "scope": "CA(SA) / AGA(SA)",
+      "keywords": [
+        "SAICA",
+        "CA(SA)"
+      ]
+    },
+    {
+      "acronym": "HPCSA",
+      "full_name": "Health Professions Council of South Africa",
+      "scope": "Health practitioners",
+      "keywords": [
+        "HPCSA",
+        "SANC"
+      ]
+    }
+  ],
+  "common_eligibility_patterns": [
+    "SAQA evaluation and NQF level alignment",
+    "South African citizenship / permanent residency / valid critical skills work permit requirement",
+    "Z83 government application form required for public-sector roles",
+    "Driver's license (Code B / EB) for field roles"
+  ],
+  "scam_red_flags": [
+    "Training deposit, police clearance fee paid to recruiter, or personal WhatsApp onboarding",
+    "Unverified Gmail domains posing as mining houses, SOEs, or major banks"
+  ],
+  "provenance": {
+    "status": "provisional",
+    "last_reviewed": null,
+    "review_note": "Compiled from general knowledge. Portal domains, regulator names and eligibility patterns have not been verified in a live session. Verify each against the current official source before relying on it, and record what you verified here."
+  }
+}

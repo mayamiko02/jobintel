@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "market_id": "REMOTE_AFRICA",
+  "market_name": "Remote (Africa & EMEA Eligible)",
+  "country_code": "MULTI",
+  "timezone": "UTC",
+  "currency": "USD",
+  "default_cutoff_hour_local": "23:59",
+  "priority_regions": [
+    {
+      "tier": 1,
+      "name": "Global / Work From Anywhere",
+      "cities_and_aliases": [
+        "Remote Worldwide",
+        "Work From Anywhere",
+        "Global Remote"
+      ]
+    },
+    {
+      "tier": 2,
+      "name": "EMEA / Africa / CAT-Compatible",
+      "cities_and_aliases": [
+        "Remote EMEA",
+        "Remote Africa",
+        "Sub-Saharan Africa",
+        "CAT",
+        "SAST",
+        "EAT",
+        "GMT+2",
+        "UTC+2"
+      ]
+    }
+  ],
+  "portals": [
+    {
+      "name": "We Work Remotely",
+      "domain": "weworkremotely.com",
+      "category": "remote_board",
+      "reliability_tier": "high",
+      "notes": "Check regional restriction tags carefully; US-only roles must be excluded unless candidate is authorized there."
+    },
+    {
+      "name": "RemoteOK",
+      "domain": "remoteok.com",
+      "category": "remote_board",
+      "reliability_tier": "medium",
+      "notes": "Verify worldwide vs US-only eligibility on original employer ATS."
+    },
+    {
+      "name": "Impactpool / ReliefWeb Remote",
+      "domain": "impactpool.org",
+      "category": "ngo_multilateral",
+      "reliability_tier": "high",
+      "notes": "International NGOs often hire Africa-based home-based consultants and coordinators."
+    },
+    {
+      "name": "Himalayas / Remotive",
+      "domain": "himalayas.app",
+      "category": "remote_board",
+      "reliability_tier": "high",
+      "notes": "Supports explicit country/timezone filters."
+    }
+  ],
+  "statutory_and_verification_bodies": [
+    {
+      "acronym": "EOR / IC",
+      "full_name": "Employer of Record or Independent Contractor Compliance",
+      "scope": "Remote cross-border payment and tax compliance (Deel, Remote.com, Oyster, or local consultancy invoicing)",
+      "keywords": [
+        "contractor",
+        "EOR",
+        "Deel",
+        "Remote from Africa",
+        "EMEA"
+      ]
+    }
+  ],
+  "common_eligibility_patterns": [
+    "Explicit 'Remote - US Only', 'Remote - EU Only', or 'W2 eligible' restrictions DISQUALIFY African residents",
+    "Verify overlap hours against candidate preference (e.g., exclude US PST/EST full night shifts if candidate requires normal local hours)",
+    "Verify stable internet, backup power, or equipment requirements stated in posting"
+  ],
+  "scam_red_flags": [
+    "Remote 'data entry' jobs promising unrealistic hourly USD pay with Telegram/WhatsApp interviews and fake check/equipment fees",
+    "Requests to pay for international background checks or software licenses upfront"
+  ],
+  "provenance": {
+    "status": "provisional",
+    "last_reviewed": null,
+    "review_note": "Compiled from general knowledge. Portal domains, regulator names and eligibility patterns have not been verified in a live session. Verify each against the current official source before relying on it, and record what you verified here."
+  }
+}

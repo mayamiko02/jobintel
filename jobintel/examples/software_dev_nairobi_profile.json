@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "fixture-ke-swe-003",
+  "profile_status": "confirmed",
+  "input_mode": "external_api",
+  "confirmed_at": "2026-11-20T12:00:00Z",
+  "identity": {
+    "full_name": "Amina Ochieng",
+    "email": "amina.ochieng.example@invalid.test",
+    "phone": "+254 700 000 333",
+    "portfolio_or_linkedin": ["https://github.com/example-amina-dev"],
+    "location": {
+      "country_code": "KE",
+      "country_name": "Kenya",
+      "region_or_province": "Nairobi",
+      "city": "Nairobi"
+    },
+    "national_id_available": true,
+    "verified_age_bracket": null,
+    "work_authorization": ["KE"]
+  },
+  "professional_positioning": {
+    "headline": "Backend & Data Integration Engineer (Python / SQL)",
+    "summary_bullets": [
+      "4.5 years building payment webhook APIs, automated ETL pipelines, and fintech reporting dashboards in Nairobi."
+    ],
+    "primary_domains": ["Backend Software Engineering", "Data Engineering & Analytics"]
+  },
+  "seniority": {
+    "estimated_years_relevant": 4.5,
+    "recommended_levels": ["mid_level", "senior_lead", "officer_specialist"],
+    "excluded_levels": ["intern_graduate", "executive_director"],
+    "evidence_rationale": "4.5 years production Python/PostgreSQL API ownership supports mid-level and early-senior engineering roles."
+  },
+  "work_experience": [
+    {
+      "role_title": "Software Engineer (Backend)",
+      "employer": "Savannah PayTech (Fictional Fintech)",
+      "location": "Nairobi, Kenya",
+      "start_date": "2022-05",
+      "end_date": "Present",
+      "employment_type": "full_time",
+      "responsibilities": [
+        "Built FastAPI REST services integrating mobile-money settlement callbacks and PostgreSQL ledgers.",
+        "Maintained Docker CI/CD test suites and nightly reconciliation ETL jobs."
+      ],
+      "verified_outcomes": ["Reduced batch settlement reconciliation runtime from 45 minutes to 6 minutes via SQL indexing."],
+      "evidence_source": "cv"
+    }
+  ],
+  "education_and_credentials": {
+    "highest_completed_level": "bachelors",
+    "qualifications": [
+      {
+        "title": "BSc in Computer Science",
+        "level": "bachelors",
+        "institution": "Nairobi Institute of Technology (Fictional)",
+        "year": "2021",
+        "status": "completed",
+        "accreditation_number": null,
+        "evidence_source": "certificate"
+      }
+    ],
+    "professional_registrations": [],
+    "credential_verification_status": {
+      "authority": "KNQA",
+      "status": "not_applicable",
+      "notes": "Private tech/remote roles rarely require KNQA unless public sector."
+    }
+  },
+  "skills": {
+    "explicit_skills": [
+      { "name": "REST API Design", "cluster": "Backend Engineering", "evidence_source": "cv", "evidence_snippet": "Built FastAPI REST services" },
+      { "name": "ETL & Data Reconciliation", "cluster": "Data Engineering", "evidence_source": "cv", "evidence_snippet": "nightly reconciliation ETL jobs" },
+      { "name": "SQL Query Optimization", "cluster": "Data Engineering", "evidence_source": "cv", "evidence_snippet": "SQL indexing" }
+    ],
+    "tools_and_systems": [
+      { "name": "Python", "proficiency": "Advanced", "evidence_source": "cv" },
+      { "name": "FastAPI", "proficiency": "Advanced", "evidence_source": "cv" },
+      { "name": "PostgreSQL", "proficiency": "Advanced", "evidence_source": "cv" },
+      { "name": "Docker", "proficiency": "Intermediate", "evidence_source": "cv" }
+    ],
+    "inferred_transferable_skills": [
+      { "skill": "Fintech Compliance & Ledger Auditing Logic", "inferred_from": "Mobile-money settlement callback reconciliation", "confidence": "high" }
+    ],
+    "languages": [
+      { "language": "English", "proficiency": "Fluent" },
+      { "language": "Swahili", "proficiency": "Native" }
+    ]
+  },
+  "adjacent_career_paths": [
+    {
+      "track_name": "Data Engineer / Analytics Engineer",
+      "why_plausible": "Strong PostgreSQL optimization and ETL pipeline background.",
+      "required_bridge_or_gap": "Spark/Airflow or dbt if explicitly mandatory."
+    }
+  ],
+  "preferences": {
+    "target_markets": ["KE", "REMOTE_AFRICA"],
+    "priority_locations": ["Nairobi", "Remote EMEA", "Remote Africa"],
+    "relocation_openness": "regional_africa_open",
+    "remote_preference": "remote_local_hours",
+    "employment_types": ["permanent", "contract", "remote"],
+    "excluded_shift_or_industries": ["US PST night shift"],
+    "expected_salary": { "currency": "USD", "min_monthly": null, "notes": null },
+    "availability": "30 days"
+  },
+  "ambiguities_to_confirm": []
+}

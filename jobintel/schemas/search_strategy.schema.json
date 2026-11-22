@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jobintel.dev/schemas/search_strategy.schema.json",
+  "title": "JOBINTEL SearchStrategy",
+  "description": "Transparent search plan generated dynamically from a confirmed CandidateProfile and MarketPack. Surfaced to the candidate at Gate 2 before searching.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "market_id",
+    "candidate_profile_ref",
+    "target_seniority_bands",
+    "title_clusters",
+    "industry_categories",
+    "keyword_sets",
+    "boolean_queries",
+    "location_tiers",
+    "source_channels",
+    "exclusion_filters"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "market_id": { "type": "string" },
+    "candidate_profile_ref": { "type": "string" },
+    "target_seniority_bands": { "type": "array", "items": { "type": "string" } },
+    "title_clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cluster_name", "primary_titles", "alternative_titles", "adjacent_titles", "cv_evidence_rationale"],
+        "properties": {
+          "cluster_name": { "type": "string" },
+          "primary_titles": { "type": "array", "items": { "type": "string" } },
+          "alternative_titles": { "type": "array", "items": { "type": "string" } },
+          "adjacent_titles": { "type": "array", "items": { "type": "string" } },
+          "cv_evidence_rationale": { "type": "string" }
+        }
+      }
+    },
+    "industry_categories": { "type": "array", "items": { "type": "string" } },
+    "keyword_sets": {
+      "type": "object",
+      "required": ["core_domain_keywords", "tools_and_cert_keywords", "transferable_keywords"],
+      "properties": {
+        "core_domain_keywords": { "type": "array", "items": { "type": "string" } },
+        "tools_and_cert_keywords": { "type": "array", "items": { "type": "string" } },
+        "transferable_keywords": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "boolean_queries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["query_id", "intent", "boolean_string", "target_scope"],
+        "properties": {
+          "query_id": { "type": "string" },
+          "intent": { "type": "string" },
+          "boolean_string": { "type": "string" },
+          "target_scope": { "type": "string" },
+          "portal_domain_hint": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "location_tiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tier", "locations", "rationale"],
+        "properties": {
+          "tier": { "type": "integer" },
+          "locations": { "type": "array", "items": { "type": "string" } },
+          "rationale": { "type": "string" }
+        }
+      }
+    },
+    "source_channels": { "type": "array", "items": { "type": "string" } },
+    "exclusion_filters": { "type": "array", "items": { "type": "string" } }
+  }
+}

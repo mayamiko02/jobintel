@@ -1,0 +1,107 @@
+{
+  "vacancy": {
+    "schema_version": "1.0.0",
+    "vacancy_id": "vac-demo-zm-health-001",
+    "dedupe_key": "placeholder-computed-by-dedupe",
+    "vacancy_ref": "ZHA-LSK-2026-14",
+    "company": "Zambia Community Health Initiative (Fictional NGO)",
+    "job_title": "Community Health & M&E Officer",
+    "category": "Public Health & NGO Programmes",
+    "location": {
+      "city_or_duty_station": "Lusaka",
+      "province_or_region": "Lusaka Province",
+      "country": "Zambia",
+      "work_mode": "onsite",
+      "remote_geo_policy": null
+    },
+    "employment_type": "Fixed-Term Contract (12 months)",
+    "experience_level": "Mid-level / Officer (3+ years)",
+    "application_link_or_email": "careers@example-health-ngo.org.test",
+    "source_url": "https://example.org/jobs/zha-lsk-2026-14",
+    "source": "NGO Direct Career Portal (Fictional)",
+    "date_posted": "2026-11-18",
+    "deadline": "2026-12-05 17:00 CAT",
+    "deadline_iso": "2026-12-05",
+    "verification_status": "verified_full_ad",
+    "is_currently_open": true,
+    "verification_notes": "Full ad verified; single PDF with NMCZ/HPCZ certificate requested; quote ref ZHA-LSK-2026-14 in subject.",
+    "requirements": {
+      "mandatory": [
+        "Diploma or Degree in Nursing, Public Health, or Community Health",
+        "Active registration with NMCZ or HPCZ",
+        "At least 3 years of ANC/ART clinic and community health data reporting (DHIS2)",
+        "Proficiency in KoboToolbox or PowerBI for donor dashboards"
+      ],
+      "preferred": [
+        "Fluency in Nyanja or Bemba for community outreach"
+      ]
+    },
+    "eligibility_and_submission_rules": {
+      "statutory_or_accreditation_required": [
+        "NMCZ or HPCZ active registration"
+      ],
+      "demographic_or_age_clause": null,
+      "requires_combined_single_pdf": true,
+      "requires_national_id_copy": true,
+      "requires_salary_expectation": false,
+      "exact_subject_line": "Application - Community Health & M&E Officer (Ref: ZHA-LSK-2026-14)",
+      "shift_or_timezone_requirement": "Normal business hours (Lusaka CAT)"
+    },
+    "availability_status": "verified_open",
+    "availability_evidence": {
+      "checked_at": "2026-11-21",
+      "basis": [
+        "full_page_fetched",
+        "deadline_in_future",
+        "apply_link_works"
+      ],
+      "recency_days": 3,
+      "notes": "Fictional example."
+    },
+    "is_official_source": true
+  },
+  "match_evaluation": {
+    "schema_version": "1.0.0",
+    "vacancy_id": "vac-demo-zm-health-001",
+    "candidate_profile_ref": "fixture-zm-nurse-001",
+    "fit_tier": "Possible Fit",
+    "recommendation": "Apply With Tailored Framing",
+    "verified_requirements_met": [
+      {
+        "requirement": "Diploma or Degree in Nursing, Public Health, or Community Health",
+        "candidate_evidence": "Diploma in Registered Nursing (completed 2021)",
+        "evidence_source": "certificate"
+      },
+      {
+        "requirement": "Active registration with NMCZ or HPCZ",
+        "candidate_evidence": "Active NMCZ registration (NMCZ-DEMO-2026)",
+        "evidence_source": "certificate"
+      },
+      {
+        "requirement": "At least 3 years of ANC/ART clinic and community health data reporting (DHIS2)",
+        "candidate_evidence": "4 years clinical ANC/ART counselling and monthly DHIS2 indicator reporting at urban health centre & mission hospital",
+        "evidence_source": "cv"
+      },
+      {
+        "requirement": "Fluency in Nyanja or Bemba for community outreach",
+        "candidate_evidence": "Fluent Bemba, conversational Nyanja",
+        "evidence_source": "cv"
+      }
+    ],
+    "inferred_transferable_skills": [
+      {
+        "requirement": "Donor M&E dashboard & data quality workflows",
+        "transferable_bridge": "Compiled weekly immunization tallies, DHIS2 indicator submissions, and Microsoft Excel tracking.",
+        "confidence": "high"
+      }
+    ],
+    "missing_qualifications_and_blockers": [
+      {
+        "gap": "Proficiency in KoboToolbox or PowerBI for donor dashboards",
+        "severity": "manageable_gap",
+        "mitigation_or_action": "Not listed in CV; disclose honestly and emphasize rapid onboarding built on DHIS2 + Excel reporting."
+      }
+    ],
+    "match_summary": "Strong foundation meeting nursing diploma, active NMCZ registration, 4 years ANC/ART & DHIS2 experience, and local languages; classified as Possible Fit due to missing KoboToolbox/PowerBI proof."
+  }
+}

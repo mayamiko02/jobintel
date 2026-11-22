@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0.0",
+  "market_id": "KE",
+  "market_name": "Kenya",
+  "country_code": "KE",
+  "timezone": "Africa/Nairobi",
+  "currency": "KES",
+  "default_cutoff_hour_local": "17:00",
+  "priority_regions": [
+    {
+      "tier": 1,
+      "name": "Nairobi Metropolitan",
+      "cities_and_aliases": [
+        "Nairobi",
+        "Westlands",
+        "Upper Hill",
+        "Thika",
+        "Kiambu",
+        "Machakos",
+        "Kajiado"
+      ]
+    },
+    {
+      "tier": 2,
+      "name": "Mombasa, Kisumu, Nakuru & Eldoret",
+      "cities_and_aliases": [
+        "Mombasa",
+        "Kisumu",
+        "Nakuru",
+        "Eldoret",
+        "Uasin Gishu"
+      ]
+    }
+  ],
+  "portals": [
+    {
+      "name": "BrighterMonday Kenya",
+      "domain": "brightermonday.co.ke",
+      "category": "local_board",
+      "reliability_tier": "high",
+      "notes": "Leading Kenyan commercial & corporate board."
+    },
+    {
+      "name": "Fuzu Kenya",
+      "domain": "fuzu.com",
+      "category": "local_board",
+      "reliability_tier": "high",
+      "notes": "Strong private sector, tech, and NGO jobs."
+    },
+    {
+      "name": "MyJobMag Kenya",
+      "domain": "myjobmag.co.ke",
+      "category": "local_board",
+      "reliability_tier": "medium",
+      "notes": "Verify original employer portal/email."
+    },
+    {
+      "name": "ReliefWeb / NGOs Kenya",
+      "domain": "reliefweb.int",
+      "category": "ngo_multilateral",
+      "reliability_tier": "high",
+      "notes": "East Africa regional NGO and UN hub in Nairobi."
+    }
+  ],
+  "statutory_and_verification_bodies": [
+    {
+      "acronym": "KNQA",
+      "full_name": "Kenya National Qualifications Authority",
+      "scope": "Qualification framework and foreign degree equation",
+      "keywords": [
+        "KNQA",
+        "CUE recognition"
+      ]
+    },
+    {
+      "acronym": "EBK",
+      "full_name": "Engineers Board of Kenya",
+      "scope": "Graduate & professional engineers",
+      "keywords": [
+        "EBK",
+        "Engineers Board of Kenya"
+      ]
+    },
+    {
+      "acronym": "NCK",
+      "full_name": "Nursing Council of Kenya",
+      "scope": "Registered nurses and midwives",
+      "keywords": [
+        "NCK",
+        "Nursing Council of Kenya"
+      ]
+    },
+    {
+      "acronym": "ICPAK",
+      "full_name": "Institute of Certified Public Accountants of Kenya",
+      "scope": "CPA(K) practicing & member status",
+      "keywords": [
+        "ICPAK",
+        "CPA(K)"
+      ]
+    },
+    {
+      "acronym": "IHRM",
+      "full_name": "Institute of Human Resource Management",
+      "scope": "HR practicing certificate",
+      "keywords": [
+        "IHRM"
+      ]
+    }
+  ],
+  "common_eligibility_patterns": [
+    "Chapter Six (6) statutory clearances for public sector / parastatal roles (KRA TCC, HELB, EACC, DCI Police Clearance, CRB)",
+    "Active practicing certificate with EBK, ICPAK, NCK, KMPDC, LSK, or IHRM",
+    "Current and expected gross salary (KES) often requested on application portals"
+  ],
+  "scam_red_flags": [
+    "Upfront recruitment, agency, or medical fees",
+    "Free email domains claiming to be UN Gigiri, Safaricom, major banks, or county governments"
+  ],
+  "provenance": {
+    "status": "provisional",
+    "last_reviewed": null,
+    "review_note": "Compiled from general knowledge. Portal domains, regulator names and eligibility patterns have not been verified in a live session. Verify each against the current official source before relying on it, and record what you verified here."
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --accent: {{ACCENT_COLOR}};
+    --dark: {{DARK_COLOR}};
+    --ink: #22252A;
+    --muted: #525860;
+  }
+  body {
+    font-family: 'Source Sans 3', 'DejaVu Sans', 'Liberation Sans', Arial, sans-serif;
+    color: var(--ink);
+    width: 210mm;
+    min-height: 297mm;
+    font-size: 10pt;
+    line-height: 1.44;
+    background: #FFFFFF;
+  }
+  .top-bar { height: 7mm; background: var(--accent); width: 100%; }
+  .bottom-bar { height: 4.5mm; background: var(--dark); width: 100%; position: fixed; bottom: 0; left: 0; }
+  .header {
+    padding: 9mm 18mm 5mm 18mm;
+    border-bottom: 1.2pt solid var(--accent);
+  }
+  .name { font-size: 19pt; font-weight: 700; color: var(--dark); letter-spacing: 0.3pt; }
+  .headline { font-size: 10.2pt; font-weight: 600; color: #2D5A7B; margin-top: 1mm; }
+  .contact { font-size: 8.6pt; color: var(--muted); margin-top: 1.6mm; }
+  .body-wrap { padding: 7mm 18mm 14mm 18mm; }
+  .meta-row { font-size: 9.2pt; color: var(--muted); margin-bottom: 4.5mm; }
+  .recipient { font-weight: 700; color: var(--dark); margin-bottom: 4mm; font-size: 9.8pt; }
+  .subject { font-weight: 700; color: var(--dark); border-left: 2.5pt solid var(--accent); padding-left: 3mm; margin-bottom: 4.5mm; font-size: 10pt; }
+  p { margin-bottom: 3.4mm; text-align: left; font-size: 9.7pt; }
+  ul.highlights { margin: 1.5mm 0 3.8mm 5mm; }
+  ul.highlights li { margin-bottom: 1.4mm; font-size: 9.4pt; line-height: 1.35; }
+  .notice-box {
+    margin: 2.5mm 0 3.8mm 0;
+    padding: 2.4mm 3.2mm;
+    background: #F4F8FB;
+    border-left: 2.2pt solid #2D5A7B;
+    font-size: 9pt;
+    color: var(--dark);
+  }
+  .closing { margin-top: 4.5mm; font-size: 9.8pt; }
+  .sig-name { font-weight: 700; color: var(--dark); margin-top: 3.5mm; }
+</style>
+</head>
+<body>
+  <div class="top-bar"></div>
+  <div class="header">
+    <div class="name">{{FULL_NAME}}</div>
+    <div class="headline">{{HEADLINE}}</div>
+    <div class="contact">{{CONTACT_LINE}}</div>
+  </div>
+  <div class="body-wrap">
+    <div class="meta-row">{{DATE_LINE}}</div>
+    <div class="recipient">{{RECIPIENT_BLOCK}}</div>
+    <div class="subject">{{SUBJECT_LINE}}</div>
+    <p>{{SALUTATION}}</p>
+    <p>{{OPENING_PARAGRAPH}}</p>
+    <p>{{ALIGNMENT_PARAGRAPH}}</p>
+    {{HIGHLIGHTS_HTML}}
+    <p>{{TRANSFERABLE_OR_CLOSING_PARAGRAPH}}</p>
+    {{DISCLOSURE_HTML}}
+    <div class="closing">
+      Yours faithfully,<br>
+      <div class="sig-name">{{FULL_NAME}}</div>
+      <div style="font-size:8.8pt;color:#525860;">{{SHORT_CONTACT}}</div>
+    </div>
+  </div>
+  <div class="bottom-bar"></div>
+</body>
+</html>

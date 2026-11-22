@@ -1,0 +1,269 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jobintel.dev/schemas/candidate_profile.schema.json",
+  "title": "JOBINTEL CandidateProfile",
+  "description": "Portable, evidence-grounded candidate intelligence schema produced by Engine 1 (CV Analysis), a manual intake form, or an external platform API. Strictly separates verified credentials from inferred transferable skills and unconfirmed ambiguities.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "profile_status",
+    "input_mode",
+    "identity",
+    "professional_positioning",
+    "seniority",
+    "work_experience",
+    "education_and_credentials",
+    "skills",
+    "adjacent_career_paths",
+    "preferences",
+    "ambiguities_to_confirm"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "profile_id": { "type": "string" },
+    "profile_status": {
+      "type": "string",
+      "enum": ["draft", "confirmed"],
+      "description": "Must reach 'confirmed' at Human Gate 1 before Engine 2 launches broad searches."
+    },
+    "input_mode": {
+      "type": "string",
+      "enum": ["cv_parsed", "manual_form", "external_api", "hybrid"]
+    },
+    "confirmed_at": { "type": ["string", "null"], "format": "date-time" },
+    "identity": {
+      "type": "object",
+      "required": ["full_name", "location"],
+      "properties": {
+        "full_name": { "type": "string", "minLength": 1 },
+        "email": { "type": ["string", "null"] },
+        "phone": { "type": ["string", "null"] },
+        "portfolio_or_linkedin": { "type": "array", "items": { "type": "string" } },
+        "location": {
+          "type": "object",
+          "required": ["country_code", "city"],
+          "properties": {
+            "country_code": { "type": "string", "description": "ISO 3166-1 alpha-2, e.g. ZM, KE, ZA, NG, GH" },
+            "country_name": { "type": "string" },
+            "region_or_province": { "type": ["string", "null"] },
+            "city": { "type": "string" }
+          }
+        },
+        "national_id_available": { "type": ["boolean", "null"] },
+        "verified_age_bracket": { "type": ["string", "null"], "description": "Null unless explicitly provided/verified by candidate." },
+        "work_authorization": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Countries/regions where candidate is legally authorized to work."
+        }
+      }
+    },
+    "professional_positioning": {
+      "type": "object",
+      "required": ["headline", "summary_bullets", "primary_domains"],
+      "properties": {
+        "headline": { "type": "string" },
+        "summary_bullets": { "type": "array", "items": { "type": "string" } },
+        "primary_domains": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Emergent career domains derived from CV (not from any fixed occupation list)."
+        }
+      }
+    },
+    "seniority": {
+      "type": "object",
+      "required": ["estimated_years_relevant", "recommended_levels", "excluded_levels", "evidence_rationale"],
+      "properties": {
+        "estimated_years_relevant": { "type": "number", "minimum": 0 },
+        "recommended_levels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["intern_graduate", "entry_junior", "assistant_associate", "officer_specialist", "mid_level", "senior_lead", "manager", "executive_director"]
+          }
+        },
+        "excluded_levels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["intern_graduate", "entry_junior", "assistant_associate", "officer_specialist", "mid_level", "senior_lead", "manager", "executive_director"]
+          }
+        },
+        "evidence_rationale": { "type": "string" }
+      }
+    },
+    "work_experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role_title", "employer", "employment_type", "evidence_source", "responsibilities"],
+        "properties": {
+          "role_title": { "type": "string" },
+          "employer": { "type": "string" },
+          "location": { "type": ["string", "null"] },
+          "start_date": { "type": ["string", "null"] },
+          "end_date": { "type": ["string", "null"] },
+          "employment_type": { "type": "string", "enum": ["full_time", "part_time", "contract", "project_based", "internship", "volunteer", "freelance", "unknown"] },
+          "responsibilities": { "type": "array", "items": { "type": "string" } },
+          "verified_outcomes": { "type": "array", "items": { "type": "string" } },
+          "evidence_source": { "type": "string", "enum": ["cv", "certificate", "candidate_confirmed"] }
+        }
+      }
+    },
+    "education_and_credentials": {
+      "type": "object",
+      "required": ["qualifications", "professional_registrations", "credential_verification_status"],
+      "properties": {
+        "highest_completed_level": {
+          "type": "string",
+          "enum": ["secondary_grade12", "certificate", "diploma", "bachelors", "postgraduate_diploma", "masters", "doctorate", "professional_fellowship", "unknown"]
+        },
+        "qualifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title", "institution", "status", "evidence_source"],
+            "properties": {
+              "title": { "type": "string" },
+              "level": { "type": "string" },
+              "institution": { "type": "string" },
+              "year": { "type": ["string", "null"] },
+              "status": { "type": "string", "enum": ["completed", "in_progress", "expired", "unverified"] },
+              "accreditation_number": { "type": ["string", "null"] },
+              "evidence_source": { "type": "string", "enum": ["cv", "certificate", "candidate_confirmed"] }
+            }
+          }
+        },
+        "professional_registrations": {
+          "type": "array",
+          "description": "Statutory or industry body memberships/practicing licenses (e.g., EIZ, HPCZ, ZICA, LAZ, ERB, NCK, ICAN, SAICA).",
+          "items": {
+            "type": "object",
+            "required": ["body_name", "status", "evidence_source"],
+            "properties": {
+              "body_name": { "type": "string" },
+              "registration_number": { "type": ["string", "null"] },
+              "status": { "type": "string", "enum": ["active", "in_progress", "expired", "not_held", "unknown"] },
+              "evidence_source": { "type": "string", "enum": ["cv", "certificate", "candidate_confirmed"] }
+            }
+          }
+        },
+        "credential_verification_status": {
+          "type": "object",
+          "description": "National qualification authority assessment status (e.g., ZAQA, SAQA, KNQA, NUC, GTEC).",
+          "required": ["status"],
+          "properties": {
+            "authority": { "type": ["string", "null"] },
+            "status": { "type": "string", "enum": ["verified", "in_progress", "not_started", "not_applicable", "unknown"] },
+            "notes": { "type": ["string", "null"] }
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "object",
+      "required": ["explicit_skills", "tools_and_systems", "inferred_transferable_skills", "languages"],
+      "properties": {
+        "explicit_skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "cluster", "evidence_source"],
+            "properties": {
+              "name": { "type": "string" },
+              "cluster": { "type": "string" },
+              "evidence_source": { "type": "string", "enum": ["cv", "certificate", "candidate_confirmed"] },
+              "evidence_snippet": { "type": ["string", "null"] }
+            }
+          }
+        },
+        "tools_and_systems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "evidence_source"],
+            "properties": {
+              "name": { "type": "string" },
+              "proficiency": { "type": ["string", "null"] },
+              "evidence_source": { "type": "string", "enum": ["cv", "certificate", "candidate_confirmed"] }
+            }
+          }
+        },
+        "inferred_transferable_skills": {
+          "type": "array",
+          "description": "Capabilities reasonably inferred from CV tasks but NOT explicitly titled as credentials.",
+          "items": {
+            "type": "object",
+            "required": ["skill", "inferred_from", "confidence"],
+            "properties": {
+              "skill": { "type": "string" },
+              "inferred_from": { "type": "string" },
+              "confidence": { "type": "string", "enum": ["high", "medium", "low"] }
+            }
+          }
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["language", "proficiency"],
+            "properties": {
+              "language": { "type": "string" },
+              "proficiency": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "adjacent_career_paths": {
+      "type": "array",
+      "description": "Plausible career tracks supported by combinations of the candidate's explicit + transferable skills.",
+      "items": {
+        "type": "object",
+        "required": ["track_name", "why_plausible", "required_bridge_or_gap"],
+        "properties": {
+          "track_name": { "type": "string" },
+          "why_plausible": { "type": "string" },
+          "required_bridge_or_gap": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "required": ["target_markets", "relocation_openness", "remote_preference", "employment_types"],
+      "properties": {
+        "target_markets": { "type": "array", "items": { "type": "string" } },
+        "priority_locations": { "type": "array", "items": { "type": "string" } },
+        "relocation_openness": { "type": "string", "enum": ["home_city_only", "domestic_open", "regional_africa_open", "international_open", "unknown"] },
+        "remote_preference": { "type": "string", "enum": ["onsite_only", "hybrid_or_onsite", "remote_local_hours", "remote_any_timezone", "flexible", "unknown"] },
+        "employment_types": { "type": "array", "items": { "type": "string", "enum": ["permanent", "fixed_term", "contract", "internship", "part_time", "consultancy", "remote"] } },
+        "excluded_shift_or_industries": { "type": "array", "items": { "type": "string" } },
+        "expected_salary": {
+          "type": "object",
+          "properties": {
+            "currency": { "type": ["string", "null"] },
+            "min_monthly": { "type": ["number", "null"] },
+            "notes": { "type": ["string", "null"] }
+          }
+        },
+        "availability": { "type": ["string", "null"] }
+      }
+    },
+    "ambiguities_to_confirm": {
+      "type": "array",
+      "description": "Explicit missing, ambiguous, or blocker-sensitive fields surfaced to the candidate at Gate 1.",
+      "items": {
+        "type": "object",
+        "required": ["field", "question", "why_it_matters", "resolved"],
+        "properties": {
+          "field": { "type": "string" },
+          "question": { "type": "string" },
+          "why_it_matters": { "type": "string" },
+          "resolved": { "type": "boolean" },
+          "candidate_answer": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

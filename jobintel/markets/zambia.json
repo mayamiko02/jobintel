@@ -1,0 +1,391 @@
+{
+  "schema_version": "1.0.0",
+  "market_id": "ZM",
+  "market_name": "Zambia",
+  "country_code": "ZM",
+  "timezone": "Africa/Lusaka",
+  "currency": "ZMW",
+  "default_cutoff_hour_local": "17:00",
+  "priority_regions": [
+    {
+      "tier": 1,
+      "name": "Lusaka Province",
+      "cities_and_aliases": [
+        "Lusaka",
+        "Chilanga",
+        "Kafue",
+        "Chongwe",
+        "Rufunsa",
+        "Luangwa",
+        "Lusaka Province"
+      ]
+    },
+    {
+      "tier": 2,
+      "name": "Copperbelt Province",
+      "cities_and_aliases": [
+        "Kitwe",
+        "Ndola",
+        "Chingola",
+        "Mufulira",
+        "Luanshya",
+        "Kalulushi",
+        "Chililabombwe",
+        "Lufwanyama",
+        "Copperbelt"
+      ]
+    },
+    {
+      "tier": 3,
+      "name": "Central & Southern Provinces",
+      "cities_and_aliases": [
+        "Kabwe",
+        "Mkushi",
+        "Kapiri Mposhi",
+        "Chibombo",
+        "Livingstone",
+        "Choma",
+        "Mazabuka",
+        "Monze",
+        "Siavonga",
+        "Kalomo"
+      ]
+    },
+    {
+      "tier": 4,
+      "name": "Eastern, Northern, North-Western, Luapula, Muchinga & Western Provinces",
+      "cities_and_aliases": [
+        "Chipata",
+        "Petauke",
+        "Katete",
+        "Kasama",
+        "Mbala",
+        "Solwezi",
+        "Kalumbila",
+        "Mansa",
+        "Nakonde",
+        "Chinsali",
+        "Mpika",
+        "Mongu",
+        "Sesheke"
+      ]
+    }
+  ],
+  "portals": [
+    {
+      "name": "Great Zambia Jobs",
+      "domain": "greatzambiajobs.com",
+      "category": "local_board",
+      "reliability_tier": "high",
+      "provenance": "observed",
+      "observed_on": "2026-11-21",
+      "notes": "Many Lusaka and national private-sector, SME and NGO ads, with category and employer pages. Detail pages were fetchable. Category pages end in a very long alphabetical employer list, so ask the fetcher only for job rows. Education-level metadata sometimes contradicts the advert body: report both. Always open the detail page for the real deadline and the application route."
+    },
+    {
+      "name": "Go Zambia Jobs",
+      "domain": "gozambiajobs.com",
+      "category": "local_board",
+      "reliability_tier": "medium",
+      "provenance": "observed",
+      "observed_on": "2026-11-21",
+      "notes": "Distinct from Great Zambia Jobs. Many adverts carry only relative ages ('1w ago') and no deadline, so those cannot reach verified_open. Some old listings stay indexed."
+    },
+    {
+      "name": "Sage HR talent pages (employer ATS)",
+      "domain": "talent.sage.hr",
+      "category": "corporate_ats",
+      "reliability_tier": "high",
+      "provenance": "observed",
+      "observed_on": "2026-11-21",
+      "notes": "An employer applicant-tracking page was the real application link for an ad first seen on a job board. Prefer ATS and employer pages over aggregator copies."
+    },
+    {
+      "name": "LinkedIn Jobs (Zambia)",
+      "domain": "linkedin.com",
+      "category": "global_aggregator",
+      "reliability_tier": "high",
+      "provenance": "observed",
+      "observed_on": "2026-11-21",
+      "notes": "Employers on local boards link their applications to LinkedIn postings. Access for automated tools may be limited; confirm what the session can reach."
+    },
+    {
+      "name": "UNjobs",
+      "domain": "unjobs.org",
+      "category": "ngo_multilateral",
+      "reliability_tier": "high",
+      "provenance": "observed",
+      "observed_on": "2026-11-21",
+      "access_note": "Automated page fetching was refused by the site's robots rules in the review session. Do not work around it; use other portals or search snippets, and declare the gap.",
+      "notes": "Lists UN duty-station vacancies. Cannot be fetched by the agent; the candidate can open it manually."
+    },
+    {
+      "name": "Impactpool and UNTalent",
+      "domain": "impactpool.org",
+      "category": "ngo_multilateral",
+      "reliability_tier": "medium",
+      "provenance": "observed",
+      "observed_on": "2026-11-21",
+      "notes": "Appeared in search results for Lusaka communications and programme roles. Many UN national-officer posts are open to Zambian nationals only, and generic rosters stay open without a live vacancy: check status and eligibility."
+    },
+    {
+      "name": "ReliefWeb",
+      "domain": "reliefweb.int",
+      "category": "ngo_multilateral",
+      "reliability_tier": "high",
+      "provenance": "provisional",
+      "notes": "Humanitarian and development roles. Not exercised in the review session; confirm it is reachable and current."
+    },
+    {
+      "name": "JobWeb Zambia",
+      "domain": "jobwebzambia.com",
+      "category": "local_board",
+      "reliability_tier": "medium",
+      "provenance": "provisional",
+      "notes": "Named as a source by users. Domain and content not confirmed in the review session; verify before use."
+    },
+    {
+      "name": "Jobs Zambia",
+      "domain": "jobszambia.co.zm",
+      "category": "local_board",
+      "reliability_tier": "verify_carefully",
+      "provenance": "provisional",
+      "notes": "Domain not confirmed. Verify the original employer link before trusting dates."
+    },
+    {
+      "name": "BrighterMonday Zambia",
+      "domain": "brightermonday.co.zm",
+      "category": "local_board",
+      "reliability_tier": "verify_carefully",
+      "provenance": "provisional",
+      "notes": "The review search returned only Kenyan BrighterMonday pages. Confirm the Zambian site exists at this domain before using it."
+    },
+    {
+      "name": "Zambia Job Alerts",
+      "domain": "zambiajobalerts.com",
+      "category": "local_board",
+      "reliability_tier": "verify_carefully",
+      "provenance": "observed",
+      "observed_on": "2026-11-21",
+      "notes": "Appeared in search results, mostly with undated or old listings. Treat as a lead source only; verify on the employer page."
+    },
+    {
+      "name": "Employer career pages (banks, telecoms, mining, retail, FMCG, universities, NGOs)",
+      "domain": "employer sites",
+      "category": "corporate_ats",
+      "reliability_tier": "high",
+      "provenance": "provisional",
+      "notes": "Not enumerated. Find them from employer names in strategy results; use the employer's own domain."
+    }
+  ],
+  "statutory_and_verification_bodies": [
+    {
+      "acronym": "ZAQA",
+      "full_name": "Zambia Qualifications Authority",
+      "scope": "Qualification verification and evaluation (mandatory for many parastatal, university, banking, and public-sector applications)",
+      "keywords": [
+        "ZAQA",
+        "Zambia Qualifications Authority",
+        "evaluated by ZAQA",
+        "ZAQA certified"
+      ],
+      "provenance": "provisional",
+      "verify_at": "The body's official website or the Zambian government qualifications/regulator pages; confirm current name, mandate and requirement."
+    },
+    {
+      "acronym": "TEVETA",
+      "full_name": "Technical Education, Vocational and Entrepreneurship Training Authority",
+      "scope": "Trades, technical certificates, and vocational diplomas",
+      "keywords": [
+        "TEVETA",
+        "Trade Test",
+        "Craft Certificate",
+        "Advanced Certificate"
+      ],
+      "provenance": "provisional",
+      "verify_at": "The body's official website or the Zambian government qualifications/regulator pages; confirm current name, mandate and requirement."
+    },
+    {
+      "acronym": "EIZ",
+      "full_name": "Engineering Institution of Zambia",
+      "scope": "Mandatory practicing certificate & membership for engineering technicians, technologists, and engineers",
+      "keywords": [
+        "EIZ",
+        "Engineering Institution of Zambia",
+        "valid practicing certificate"
+      ],
+      "provenance": "provisional",
+      "verify_at": "The body's official website or the Zambian government qualifications/regulator pages; confirm current name, mandate and requirement."
+    },
+    {
+      "acronym": "HPCZ",
+      "full_name": "Health Professions Council of Zambia",
+      "scope": "Mandatory practicing license for clinical officers, pharmacists, lab scientists, doctors, and allied health roles",
+      "keywords": [
+        "HPCZ",
+        "Health Professions Council of Zambia",
+        "practicing license"
+      ],
+      "provenance": "provisional",
+      "verify_at": "The body's official website or the Zambian government qualifications/regulator pages; confirm current name, mandate and requirement."
+    },
+    {
+      "acronym": "NMCZ",
+      "full_name": "Nursing and Midwifery Council of Zambia",
+      "scope": "Mandatory registration and annual practicing license for nurses and midwives",
+      "keywords": [
+        "NMCZ",
+        "GNCZ",
+        "Nursing and Midwifery Council"
+      ],
+      "provenance": "provisional",
+      "verify_at": "The body's official website or the Zambian government qualifications/regulator pages; confirm current name, mandate and requirement."
+    },
+    {
+      "acronym": "ZICA",
+      "full_name": "Zambia Institute of Chartered Accountants",
+      "scope": "Mandatory membership for accounting, audit, tax, and finance officer/manager roles",
+      "keywords": [
+        "ZICA",
+        "ACCA",
+        "CIMA",
+        "Chartered Accountant"
+      ],
+      "provenance": "provisional",
+      "verify_at": "The body's official website or the Zambian government qualifications/regulator pages; confirm current name, mandate and requirement."
+    },
+    {
+      "acronym": "LAZ",
+      "full_name": "Law Association of Zambia",
+      "scope": "Advocates of the High Court for Zambia and legal practice",
+      "keywords": [
+        "LAZ",
+        "Advocate of the High Court"
+      ],
+      "provenance": "provisional",
+      "verify_at": "The body's official website or the Zambian government qualifications/regulator pages; confirm current name, mandate and requirement."
+    },
+    {
+      "acronym": "ZIHRM",
+      "full_name": "Zambia Institute of Human Resource Management",
+      "scope": "HR officers and practitioners",
+      "keywords": [
+        "ZIHRM",
+        "HR practicing certificate"
+      ],
+      "provenance": "provisional",
+      "verify_at": "The body's official website or the Zambian government qualifications/regulator pages; confirm current name, mandate and requirement."
+    },
+    {
+      "acronym": "TCZ",
+      "full_name": "Teaching Council of Zambia",
+      "scope": "Teachers and lecturers in primary/secondary schools",
+      "keywords": [
+        "TCZ",
+        "Teaching Council of Zambia"
+      ],
+      "provenance": "provisional",
+      "verify_at": "The body's official website or the Zambian government qualifications/regulator pages; confirm current name, mandate and requirement."
+    },
+    {
+      "acronym": "ZIM",
+      "full_name": "Zambia Institute of Marketing",
+      "scope": "Professional membership requested by some marketing adverts",
+      "keywords": [
+        "ZIM",
+        "Zambia Institute of Marketing"
+      ],
+      "provenance": "observed",
+      "verify_at": "A live Zambian advert in 2026-11-21 listed membership as a requirement. Confirm the body's current membership rules."
+    }
+  ],
+  "common_eligibility_patterns": [
+    {
+      "pattern": "Combine application letter, CV and certified copies into ONE single PDF",
+      "provenance": "observed"
+    },
+    {
+      "pattern": "Exact email subject line required; applications without it may be filtered out",
+      "provenance": "observed"
+    },
+    {
+      "pattern": "Copy of National Registration Card (NRC) requested with the application",
+      "provenance": "observed"
+    },
+    {
+      "pattern": "Expected salary and availability to be stated in the cover letter",
+      "provenance": "observed"
+    },
+    {
+      "pattern": "Minimum education stated as diploma or bachelor's, sometimes contradicting the body text",
+      "provenance": "observed"
+    },
+    {
+      "pattern": "Required professional membership (for example ZIM for marketing roles)",
+      "provenance": "observed"
+    },
+    {
+      "pattern": "Gender or age preference stated in the advert (for example female-only, or ages 18-25)",
+      "provenance": "observed"
+    },
+    {
+      "pattern": "Driver's licence or own vehicle required for field sales roles",
+      "provenance": "observed"
+    },
+    {
+      "pattern": "ZAQA certification or evaluation of qualifications is a must",
+      "provenance": "reported"
+    },
+    {
+      "pattern": "Valid practising licence with a statutory body (EIZ, HPCZ, NMCZ, ZICA, LAZ, ZIHRM, TCZ)",
+      "provenance": "provisional"
+    },
+    {
+      "pattern": "Zambian nationals only (common for UN national-officer posts)",
+      "provenance": "observed"
+    }
+  ],
+  "scam_red_flags": [
+    {
+      "flag": "Any fee demanded for interview processing, medicals, uniforms, training or registration",
+      "provenance": "provisional"
+    },
+    {
+      "flag": "Free webmail (Gmail/Yahoo) as the only contact for an employer that should have its own domain, or for UN agencies, banks, mines or ministries",
+      "provenance": "observed"
+    },
+    {
+      "flag": "Staffing-agency advert on a foreign or unrelated domain that hides the end employer",
+      "provenance": "observed"
+    },
+    {
+      "flag": "Several adverts under different employer names sharing the same contact email",
+      "provenance": "observed"
+    },
+    {
+      "flag": "Commission-only 'sales' roles, especially plot or land sales, presented as employment",
+      "provenance": "observed"
+    },
+    {
+      "flag": "Requests for NRC or original certificates up front, or for bank PINs and mobile-money deposits",
+      "provenance": "provisional"
+    },
+    {
+      "flag": "WhatsApp-only recruitment for corporate roles; undated listings with very old IDs",
+      "provenance": "provisional"
+    },
+    {
+      "flag": "Generic mass-copy listings with no company address or contact verification",
+      "provenance": "provisional"
+    }
+  ],
+  "provenance": {
+    "status": "partially_verified",
+    "last_reviewed": "2026-11-21",
+    "review_note": "Items tagged 'observed' were seen directly during a live job search on 2026-11-21 and may have changed since. Items tagged 'reported' come from the package author's earlier work and were not re-checked. Everything else is 'provisional' general knowledge: confirm domains, regulator names, mandates and cutoffs against the current official source before relying on them."
+  },
+  "default_cutoff_provenance": "provisional",
+  "title_vocabulary": {
+    "provenance": "observed",
+    "note": "Zambian employers use titles loosely. Search variants such as Officer, Assistant, Coordinator, Executive, Representative, Personnel, Marketer, Consultant, Agent, Trainee. 'Executive' in sales and marketing is often entry or mid level in adverts; check the stated years and requirements."
+  }
+}
